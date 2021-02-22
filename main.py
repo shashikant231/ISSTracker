@@ -50,7 +50,7 @@ my_email = "trackeriss511@gmail.com"
 password = "domd1234"
 
 while True:
-    time.sleep(45)
+    time.sleep(45)#this will automatically run after 45 seconds and check wheather it is over or not
     if is_iss_overhead() and is_night() is True:
         with smtplib.SMTP("smtp.gmail.com") as connection:
             connection.starttls()
