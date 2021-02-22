@@ -8,8 +8,9 @@ my_lat = 25.594095
 my_lon = 85.137566
 
 def is_iss_overhead():
+    #iss_api endpoint will give current latitude and longitude of iss 
     response = requests.get(url = 'http://api.open-notify.org/iss-now.json')
-    #response.json is returning a dictionary
+    #response.json is returning a dictionary in which we have stored only iss_position as data
     data  = response.json()["iss_position"]
     latitude = float(data["latitude"])
     longitude = float(data["longitude"])
@@ -22,10 +23,12 @@ def is_iss_overhead():
 def is_night():
 
     parameters = {
-    "lat" : 25.594095 ,
-    "lng" : 85.137566 ,
+    "lat" : my_lat ,
+    "lng" : my_lon ,
     "formatted" : 0
     }
+    #sunrise and sunset api endpoints will give the sunset and sunrise time of my place for which it need two parameters ,your latitude and longitude
+    #you can check this :"https://sunrise-sunset.org/api" for info on why we used formatted as third parameters
     response  = requests.get(url="https://api.sunrise-sunset.org/json",params=parameters)
     response.raise_for_status()
     data = response.json()
