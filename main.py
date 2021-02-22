@@ -49,8 +49,12 @@ def is_night():
 
 
 
-my_email = "trackeriss511@gmail.com"
-password = "domd1234"
+my_email = "youremail@gmail.com"
+password = "yourpassword"
+
+#gmail do not allow less secure app (like our python script) to login to access your account.To let gmail to access our app we have to first change some by-default setting
+# Turn on the "Less secure apps access " in security section 
+#it is good practise to check your cde with new gmail-account
 
 while True:
     time.sleep(45)#this will automatically run after 45 seconds and check wheather it is over or not
